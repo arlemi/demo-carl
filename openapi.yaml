@@ -3,7 +3,9 @@ info:
   title: Carlsberg Beer API
   version: 1.0.0
   description: API for accessing and managing information about Carlsberg beers
-
+security:
+    - testAuth : []
+    
 paths:
   /beers:
     get:
@@ -42,6 +44,8 @@ paths:
                 name: Carlsberg Wheat Beer
                 type: Wheat Beer
                 alcohol_content: 4.5%
+        '500':
+          description: Internal server error
 
   /beers/{beerId}:
     parameters:
@@ -66,6 +70,8 @@ paths:
                 alcohol_content: 5.0%
         '404':
           description: Beer not found
+        '500':
+          description: Internal server error
 
     put:
       summary: Update information about a specific Carlsberg beer
@@ -87,7 +93,8 @@ paths:
                 alcohol_content: 5.2%
         '404':
           description: Beer not found
-
+        '500':
+          description: Internal server error
     delete:
       summary: Delete a specific Carlsberg beer
       responses:
@@ -95,7 +102,8 @@ paths:
           description: Beer deleted successfully
         '404':
           description: Beer not found
-
+        '500':
+          description: Internal server error
 components:
   schemas:
     Beer:
