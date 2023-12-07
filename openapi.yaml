@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  title: Carlsberg Beer API
+  version: 1.0.0
+  description: API for accessing and managing information about Carlsberg beers
+
+paths:
+  /beers:
+    get:
+      summary: Get a list of all Carlsberg beers
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                beers:
+                  - id: 1
+                    name: Carlsberg Lager
+                    type: Lager
+                    alcohol_content: 5.0%
+                  - id: 2
+                    name: Carlsberg Pilsner
+                    type: Pilsner
+                    alcohol_content: 4.8%
+
+    post:
+      summary: Add a new Carlsberg beer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Beer'
+      responses:
+        '201':
+          description: Beer added successfully
+          content:
+            application/json:
+              example:
+                id: 3
+                name: Carlsberg Wheat Beer
+                type: Wheat Beer
+                alcohol_content: 4.5%
+
+  /beers/{beerId}:
+    parameters:
+      - name: beerId
+        in: path
+        description: ID of the Carlsberg beer
+        required: true
+        schema:
+          type: integer
+
+    get:
+      summary: Get information about a specific Carlsberg beer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                id: 1
+                name: Carlsberg Lager
+                type: Lager
+                alcohol_content: 5.0%
+        '404':
+          description: Beer not found
+
+    put:
+      summary: Update information about a specific Carlsberg beer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Beer'
+      responses:
+        '200':
+          description: Beer updated successfully
+          content:
+            application/json:
+              example:
+                id: 1
+                name: Carlsberg Lager (Updated)
+                type: Lager
+                alcohol_content: 5.2%
+        '404':
+          description: Beer not found
+
+    delete:
+      summary: Delete a specific Carlsberg beer
+      responses:
+        '204':
+          description: Beer deleted successfully
+        '404':
+          description: Beer not found
+
+components:
+  schemas:
+    Beer:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the beer
+        name:
+          type: string
+          description: Name of the Carlsberg beer
+        type:
+          type: string
+          description: Type of beer (e.g., Lager, Pilsner)
+        alcohol_content:
+          type: string
+          description: Alcohol content of the beer
