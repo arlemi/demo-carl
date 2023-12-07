@@ -25,6 +25,10 @@ paths:
                     name: Carlsberg Pilsner
                     type: Pilsner
                     alcohol_content: 4.8%
+        '401':
+          description: Internal Server Error
+        '500':
+          description: Internal Server Error
 
     post:
       summary: Add a new Carlsberg beer
@@ -121,3 +125,7 @@ components:
         alcohol_content:
           type: string
           description: Alcohol content of the beer
+  securitySchemes:
+    testAuth:
+      type: http
+      scheme: basic
