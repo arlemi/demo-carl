@@ -617,6 +617,127 @@
 					]
 				},
 				{
+					"name": "Get a list of all Carlsberg beers Copy",
+					"id": "8d5f4f15-e976-48ce-a82f-54b6ef6e7501",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/beers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"beers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "47ae1380-4081-4548-b298-bab7ee3a70ab",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/beers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"beers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"beers\": [\n    {\n      \"id\": 1,\n      \"name\": \"Carlsberg Lager\",\n      \"type\": \"Lager\",\n      \"alcohol_content\": \"5.0%\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Carlsberg Pilsner\",\n      \"type\": \"Pilsner\",\n      \"alcohol_content\": \"4.8%\"\n    }\n  ]\n}"
+						},
+						{
+							"id": "991dc703-38ef-421d-aee9-42b1dc61107e",
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/beers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"beers"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						},
+						{
+							"id": "5ad20225-4d3f-4ec1-9630-4d44af3ecd2b",
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/beers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"beers"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				},
+				{
 					"name": "Add a new Carlsberg beer",
 					"id": "b9685a18-bd2b-4b4e-8518-fb17a9a0e551",
 					"protocolProfileBehavior": {
@@ -796,7 +917,7 @@
 	],
 	"variable": [
 		{
-			"id": "1dbc086d-52cb-45ba-9401-615d9e31ef7f",
+			"id": "2286717c-4340-43ed-844a-7aebdd7d24fa",
 			"key": "baseUrl",
 			"value": "/",
 			"type": "any"
