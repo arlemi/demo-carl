@@ -770,9 +770,33 @@
 			}
 		]
 	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "11e1ab20-f8d8-4f68-8345-481a649382c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "efb32019-b15a-4f01-b516-b741f3b4353b",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "3200961d-ccee-4773-8051-3c9d94dbd07c",
+			"id": "1dbc086d-52cb-45ba-9401-615d9e31ef7f",
 			"key": "baseUrl",
 			"value": "/",
 			"type": "any"
