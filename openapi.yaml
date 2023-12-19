@@ -74,6 +74,8 @@ paths:
                 alcohol_content: 5.0%
         '404':
           description: Beer not found
+        '500':
+          description: Internal Server Error
 
     put:
       summary: Update information about a specific Carlsberg beer
