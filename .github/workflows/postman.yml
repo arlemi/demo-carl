@@ -1,0 +1,19 @@
+name: Automated API tests using Postman CLI
+
+on: push
+
+jobs:
+  automated-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Run API tests
+        run: |
+          postman collection run "${{ github.workspace }}/postman/collections/Beer API collection.json" -e "28650973-cb101402-62d2-4c05-bc53-c5dd13465ecb" --integration-id "155010-${{ github.run_id }}"
+          # Lint your API using Postman CLI
+          postman api lint 9be84c24-296c-4fc2-a21a-235bfe23114a --integration-id 155010
