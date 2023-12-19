@@ -122,6 +122,40 @@
 									"_postman_previewlanguage": "text",
 									"header": [],
 									"cookie": []
+								},
+								{
+									"id": "59aca63b-15f7-4b98-bcb2-20d9ca8ed548",
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/beers/:beerId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"beers",
+												":beerId"
+											],
+											"variable": [
+												{
+													"key": "beerId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
 								}
 							]
 						},
