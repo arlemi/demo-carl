@@ -617,7 +617,7 @@
 					]
 				},
 				{
-					"name": "Get a list of all Carlsberg beers Copy",
+					"name": "Get a list of all Carlsberg beers",
 					"id": "8d5f4f15-e976-48ce-a82f-54b6ef6e7501",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
